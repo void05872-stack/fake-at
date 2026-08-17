@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLACK MARKET 404</title>
+
+<style>
+body{
+    margin:0;
+    background:#000;
+    color:#0f0;
+    font-family:Consolas, monospace;
+    overflow:hidden;
+}
+
+#login{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+button{
+    background:#111;
+    color:#0f0;
+    border:1px solid #0f0;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+#main{
+    display:none;
+    padding:20px;
+}
+
+.box{
+    border:1px solid #0f0;
+    padding:15px;
+    margin-top:15px;
+}
+
+.glitch{
+    font-size:40px;
+    animation:glitch 1s infinite;
+}
+
+@keyframes glitch{
+    0%{opacity:1}
+    50%{opacity:0.4}
+    100%{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<div id="login">
+    <h1 class="glitch">BLACK MARKET 404</h1>
+    <p>سیستم محرمانه</p>
+    <button onclick="access()">ENTER</button>
+</div>
+
+<div id="main">
+    <h1>ACCESS GRANTED</h1>
+
+    <div class="box">
+        <h3>MISSION</h3>
+        <p>رمز امروز را پیدا کن.</p>
+    </div>
+
+    <div class="box">
+        <h3>TERMINAL</h3>
+        <input id="code" placeholder="رمز را وارد کن">
+        <button onclick="check()">ارسال</button>
+    </div>
+
+    <div class="box" id="result">
+        وضعیت: در انتظار...
+    </div>
+</div>
+
+<script>
+
+function access(){
+    document.getElementById("login").style.display="none";
+    document.getElementById("main").style.display="block";
+}
+
+function check(){
+    let code=document.getElementById("code").value;
+
+    if(code==="shadow"){
+        document.getElementById("result").innerHTML=
+        "✅ ACCESS LEVEL UP<br>XP +100";
+    }else{
+        document.getElementById("result").innerHTML=
+        "❌ WRONG CODE";
+    }
+}
+
+</script>
+
+</body>
+</html>
